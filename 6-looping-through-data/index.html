@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>vue app</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container" id="app">
+    <div class="row d-flex mb-3 align-item-center" v-for="item in products">
+        <div class="col-sm-4">
+            <img class="img-fluid d-block" :src="item.image" :alt="item.name">
+        </div>
+        <div class="col">
+            <h3 class="text-info">{{item.name}}</h3>
+            <p class="mb-0">{{item.description}}</p>
+            <div class="h5 float-right">${{item.price}}</div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+<script>
+    var data = {
+        products : [
+            {
+                "id" : "1",
+                "name" : "book1",
+                "price" : "600",
+                "description" : "book1 book",
+                "image_title" : "book-1398",
+                "image" : "http://smartmobilestudio.com/wp-content/uploads/2012/06/leather-book-preview.png",
+            },
+            {
+                "id" : "2",
+                "name" : "book2",
+                "price" : "700",
+                "description" : "book2 book",
+                "image_title" : "book-1398",
+                "image" : "https://quantumleapjourney.files.wordpress.com/2014/11/ebook.jpg",
+            },
+            {
+                "id" : "3",
+                "name" : "book3",
+                "price" : "800",
+                "description" : "book3 book",
+                "image_title" : "book-1398",
+                "image" : "http://www.betweenmylines.com/wp-content/uploads/2014/09/book_PNG2116.png",
+            },
+        ]
+    }
+    var app = new Vue({
+        el:"#app" ,
+        data: data
+
+    });
+</script>
+
+</body>
+</html>
